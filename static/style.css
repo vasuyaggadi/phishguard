@@ -1,0 +1,1046 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: #000000;
+
+    color: white;
+
+    min-height: 100vh;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    background: #081522;
+
+    border-bottom: 1px solid #1b3045;
+
+}
+
+
+.logo {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+}
+
+
+nav {
+
+    display: flex;
+
+    gap: 30px;
+
+}
+
+
+nav a {
+
+    color: #91a5ba;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+
+}
+
+
+nav a:hover {
+
+    color: #36d9a8;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    text-align: center;
+
+    padding: 100px 20px 70px;
+
+}
+
+
+.badge {
+
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    border: 1px solid #294b63;
+
+    border-radius: 20px;
+
+    color: #36d9a8;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+}
+
+
+.hero h1 {
+
+    font-size: 60px;
+
+    line-height: 1.05;
+
+    margin: 25px 0;
+
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    color: #36d9a8;
+
+}
+
+
+.hero p {
+
+    color: #91a5ba;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   URL SCANNER
+===================================================== */
+
+.scanner {
+
+    max-width: 750px;
+
+    margin: 35px auto 15px;
+
+    padding: 7px;
+
+    display: flex;
+
+    background: #0c1c2d;
+
+    border: 1px solid #29455e;
+
+    border-radius: 15px;
+
+}
+
+
+.scanner input {
+
+    flex: 1;
+
+    background: transparent;
+
+    border: none;
+
+    outline: none;
+
+    padding: 17px;
+
+    color: white;
+
+    font-size: 16px;
+
+}
+
+
+.scanner input::placeholder {
+
+    color: #71869b;
+
+}
+
+
+.scanner button {
+
+    background: #36d9a8;
+
+    color: #04131d;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 0 28px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.scanner button:hover {
+
+    transform: translateY(-1px);
+
+}
+
+
+.scanner button:disabled {
+
+    opacity: 0.5;
+
+    cursor: wait;
+
+}
+
+
+/* =====================================================
+   LOADING / ERROR
+===================================================== */
+
+#loading {
+
+    color: #36d9a8;
+
+    margin-top: 15px;
+
+}
+
+
+#error {
+
+    color: #ff6b7a;
+
+    margin-top: 15px;
+
+}
+
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    margin-bottom: 70px;
+
+    padding: 35px;
+
+    background: #0b1b2c;
+
+    border: 1px solid #24425a;
+
+    border-radius: 20px;
+
+}
+
+
+.result-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.small-title {
+
+    color: #36d9a8 !important;
+
+    font-size: 12px !important;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+}
+
+
+.result h2 {
+
+    font-size: 30px;
+
+    margin: 5px 0;
+
+}
+
+
+#resultURL {
+
+    color: #7f94a9;
+
+    word-break: break-all;
+
+}
+
+
+.score {
+
+    font-size: 50px;
+
+    font-weight: bold;
+
+}
+
+
+.score small {
+
+    font-size: 16px;
+
+    color: #71869b;
+
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.progress-container {
+
+    height: 12px;
+
+    width: 100%;
+
+    background: #172a3e;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin: 25px 0;
+
+}
+
+
+#progress {
+
+    height: 100%;
+
+    width: 0%;
+
+    background: #36d9a8;
+
+    transition: width 0.6s;
+
+}
+
+
+/* =====================================================
+   VIRUSTOTAL
+===================================================== */
+
+.vt-box {
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    background: #081725;
+
+    border: 1px solid #203c55;
+
+    border-radius: 15px;
+
+}
+
+
+.vt-box h3 {
+
+    margin-top: 0;
+
+}
+
+
+.vt-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.vt-stats div {
+
+    padding: 20px;
+
+    text-align: center;
+
+    background: #0d2032;
+
+    border-radius: 12px;
+
+}
+
+
+.vt-stats strong {
+
+    display: block;
+
+    font-size: 30px;
+
+}
+
+
+.vt-stats span {
+
+    color: #8296ab;
+
+    font-size: 13px;
+
+}
+
+
+#malicious {
+
+    color: #ff5f6d;
+
+}
+
+
+#suspicious {
+
+    color: #ffd166;
+
+}
+
+
+#undetected {
+
+    color: #36d9a8;
+
+}
+
+
+#vtStatus {
+
+    margin-bottom: 0;
+
+    color: #bdcddd;
+
+}
+
+
+/* =====================================================
+   INFORMATION BOXES
+===================================================== */
+
+.info-box {
+
+    margin-top: 25px;
+
+    padding: 25px;
+
+    background: #081725;
+
+    border: 1px solid #203c55;
+
+    border-radius: 15px;
+
+}
+
+
+.info-box h3 {
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =====================================================
+   VENDORS
+===================================================== */
+
+.vendors {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.vendor-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 130px 150px;
+
+    align-items: center;
+
+    padding: 12px 15px;
+
+    background: #0d2032;
+
+    border-radius: 8px;
+
+}
+
+
+.vendor-name {
+
+    font-weight: bold;
+
+}
+
+
+.vendor-result {
+
+    color: #8296ab;
+
+}
+
+
+.vendor-category {
+
+    text-align: center;
+
+    padding: 5px 10px;
+
+    border-radius: 15px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+.vendor-malicious {
+
+    background: #4b1820;
+
+    color: #ff6978;
+
+}
+
+
+.vendor-suspicious {
+
+    background: #4b3b14;
+
+    color: #ffd166;
+
+}
+
+
+.vendor-harmless {
+
+    background: #123b30;
+
+    color: #36d9a8;
+
+}
+
+
+.vendor-undetected {
+
+    background: #172a3d;
+
+    color: #91a5ba;
+
+}
+
+
+/* =====================================================
+   SERVING IP
+===================================================== */
+
+.ip-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+
+.ip-item {
+
+    padding: 10px 15px;
+
+    background: #0d2032;
+
+    border: 1px solid #29455e;
+
+    border-radius: 8px;
+
+    font-family: monospace;
+
+    color: #36d9a8;
+
+}
+
+
+.empty-text {
+
+    color: #8296ab;
+
+    margin: 0;
+
+}
+
+
+/* =====================================================
+   HISTORY
+===================================================== */
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.stat-card {
+
+    padding: 20px;
+
+    background: #0d2032;
+
+    border-radius: 10px;
+
+}
+
+
+.stat-card span {
+
+    display: block;
+
+    color: #8296ab;
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.stat-card strong {
+
+    font-size: 16px;
+
+    word-break: break-word;
+
+}
+
+
+/* =====================================================
+   PAGE STATS
+===================================================== */
+
+.page-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.page-stats > div {
+
+    padding: 18px;
+
+    background: #0d2032;
+
+    border-radius: 10px;
+
+}
+
+
+.page-stats span {
+
+    display: block;
+
+    color: #8296ab;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.page-stats strong {
+
+    display: block;
+
+    word-break: break-word;
+
+}
+
+
+/* =====================================================
+   LOCAL DETECTION
+===================================================== */
+
+.local-analysis {
+
+    margin-top: 25px;
+
+}
+
+
+.local-analysis h3 {
+
+    margin-bottom: 15px;
+
+}
+
+
+#reasons {
+
+    padding-left: 20px;
+
+}
+
+
+#reasons li {
+
+    margin: 12px 0;
+
+    color: #bdcddd;
+
+}
+
+
+/* =====================================================
+   HOW IT WORKS
+===================================================== */
+
+.how {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 20px;
+
+}
+
+
+.how > h2 {
+
+    text-align: center;
+
+    font-size: 35px;
+
+}
+
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 35px;
+
+}
+
+
+.card {
+
+    background: #0a1929;
+
+    border: 1px solid #1c344b;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+}
+
+
+.number {
+
+    color: #36d9a8;
+
+    font-weight: bold;
+
+}
+
+
+.card p {
+
+    color: #8296ab;
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    margin-top: 80px;
+
+    text-align: center;
+
+    padding: 30px;
+
+    border-top: 1px solid #172a40;
+
+    color: #63788f;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+
+    header {
+
+        padding: 0 20px;
+
+    }
+
+
+    nav {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        padding-top: 60px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 42px;
+
+    }
+
+
+    .scanner {
+
+        flex-direction: column;
+
+        gap: 7px;
+
+    }
+
+
+    .scanner input {
+
+        min-height: 55px;
+
+    }
+
+
+    .scanner button {
+
+        height: 50px;
+
+    }
+
+
+    .cards {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .vt-stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .result {
+
+        margin: 15px;
+
+        padding: 20px;
+
+    }
+
+
+    .result-header {
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+    }
+
+
+    .score {
+
+        font-size: 35px;
+
+    }
+
+
+    .vendor-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+
+    }
+
+
+    .vendor-category {
+
+        text-align: left;
+
+        width: fit-content;
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .page-stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+/* =====================================================
+   RISK COLORS
+===================================================== */
+
+#risk.risk-low {
+    color: #36d9a8;
+}
+
+#risk.risk-medium {
+    color: #ffd166;
+}
+
+#risk.risk-high {
+    color: #ff5f6d;
+}
+
+
+/* =====================================================
+   VIRUSTOTAL STATUS
+===================================================== */
+
+#vtStatus {
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+
+/* =====================================================
+   MOBILE IMPROVEMENTS
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .result-header {
+        flex-direction: column;
+    }
+
+    .score {
+        margin-top: 10px;
+    }
+
+}
